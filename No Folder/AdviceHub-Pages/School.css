@@ -1,0 +1,147 @@
+@media (max-width: 768px) {
+  .navbar {
+    justify-content: flex-start;
+    width: 100%;
+    margin-top: 10px;
+  }
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #fff;
+  padding: 40px;
+  margin: 0;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  padding: 10px 40px;   
+  border-bottom: 2px solid #000;
+  background: #fff;
+}
+
+.logo-container {
+  width: 50px;
+  height: 50px;
+  margin-right: 20px;
+}
+
+.logo {
+  width: 100%;
+  height: auto;
+  border-radius: 50%;
+}
+
+/* NAVBAR CSS */
+.navbar {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+.navbar ul {
+  display: flex;
+  gap: 60px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  align-items: center;
+}
+.navbar li {
+  display: inline-block;
+}
+.navbar a {
+  padding: 10px 15px;
+  border-radius: 25px;
+  border: 2px solid #000;
+  background: #ffde59;
+  cursor: pointer;
+  font-family: 'Comic Sans MS', cursive, sans-serif;
+  font-weight: bold;
+  text-decoration: none;
+  color: #000;
+}
+.navbar a.highlight {
+  background-color: #fcd34d;
+}
+
+/* MAIN CONTENT SECTION */
+.time-management-section {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: auto;
+  gap: 50px;
+  padding: 60px 40px;
+  flex-wrap: wrap;
+}
+
+/* LEFT SIDE TEXT */
+.text-content {
+  flex: 1;
+  max-width: 500px;
+  font-family: 'Comic Sans MS', cursive, sans-serif;
+}
+
+.text-content h1 {
+  font-size: 28px;
+  margin-bottom: 25px;
+  color: #333;
+}
+
+.text-content p {
+  font-size: 16px;
+  font-weight: 400;
+  margin-bottom: 25px;
+  line-height: 1.6;
+  color: #666;
+}
+
+/* BUTTON STYLE */
+.click-me-btn {
+  padding: 10px 20px;
+  background-color: #ffde59;
+  border: 2px solid #000;
+  border-radius: 20px;
+  font-family: 'Comic Sans MS', cursive, sans-serif;
+  cursor: pointer;
+  transition: background 0.3s;
+  text-decoration: none;
+  color: #000;
+}
+
+.click-me-btn:hover {
+  background-color: #fcd34d;
+}
+
+/* RIGHT SIDE IMAGE GRID */
+.image-grid {
+  flex: 1;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: auto auto;
+  gap: 20px;
+  max-width: 600px;
+  width: 100%;
+}
+
+.image-grid img {
+  width: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.image-grid img:first-child {
+  grid-column: span 2;
+  height: 300px;
+}
+
+.image-grid img:not(:first-child) {
+  height: 150px;
+}
