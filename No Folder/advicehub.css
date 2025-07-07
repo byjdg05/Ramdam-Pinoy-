@@ -1,0 +1,146 @@
+/* === GLOBAL VARIABLES === */
+:root {
+  --yellow: #f7f7f7;
+  --yellow-dark: #ffde59;
+  --bg-dark: rgba(0, 0, 0, 0.6);
+  --overlay-dark: rgba(0, 0, 0, 0.4);
+  --text-dark: #000;
+  --white-glass: rgba(255, 255, 255, 0.9);
+  --font-main: 'Poppins', sans-serif;
+}
+/* === PAGE BACKGROUND & OVERLAY === */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-image: url('IMAGES/backgroundphoto.webp'); /* ✅ Your image path */
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  filter: blur(6px); /* 🔍 adjust blur intensity */
+  z-index: -2; /* Behind the dark overlay */
+}
+/* Keep your dark overlay above the blurred image */
+body::after {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.4); /* darkens the blur for readability */
+  z-index: -1;
+}
+@media (max-width: 768px) {
+  .navbar {
+    justify-content: flex-start;
+    width: 100%;
+    margin-top: 10px;
+  }
+}
+header {
+  display: flex;
+  align-items: center;
+  padding: 10px 40px;
+  border-bottom: 2px solid #000;
+  background: rgba(255, 255, 255, 0); /* White with 80% opacity */
+  backdrop-filter: blur(3px); /* optional: adds frosted glass effect */
+}
+.logo-container {
+  width: 50px;
+  height: 50px;
+  margin-right: 20px;
+}
+.logo {
+  width: 100%;
+  height: auto;
+  border-radius: 50%;
+}
+/* ===NAVBAR=== */
+.navbar {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.navbar ul {
+  display: flex;
+  gap: 50px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  align-items: center;
+}
+
+.navbar li {
+  display: inline-block;
+}
+
+.navbar a {
+  padding: 10px 20px;
+  border-radius: 25px;
+  background-color: var(--yellow);
+  border: 2px solid var(--yellow);
+  color: var(--text-dark);
+  font-weight: 600;
+  text-decoration: none;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+  transition: transform 0.25s ease, background-color 0.25s ease, box-shadow 0.25s ease;
+  will-change: transform;
+}
+
+.navbar a:hover {
+  background-color: var(--yellow-dark);
+  transform: scale(1.12); /* bigger zoom (was 1.05) */
+  box-shadow: 6px 6px 15px rgba(0, 0, 0, 0.4); /* deeper shadow */
+}
+/*DIFF STUFF*/
+.banner {
+  width: 100%;
+  height: 560px; /* Adjustable */
+  overflow: hidden;
+}
+
+.banner-img {
+  width: 100%;
+  height: 100%;
+  opacity: 100%;
+  object-fit: cover;
+  display: block;
+}
+.advice-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 2 columns */
+  gap: 40px;
+  padding: 50px 20px;
+  max-width: 900px; 
+  margin: 0 auto; /* horizontal center */
+  justify-items: center; /* center boxes inside columns */
+}
+
+.advice-box {
+  display: block;
+  width: 100%;
+  max-width: 400px;
+  aspect-ratio: 4 / 3; /* maintains proper box shape */
+  overflow: hidden;
+  border-radius: 12px;
+  border: 2px solid #000;
+  background-color: #eee;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.advice-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* makes sure the image fills nicely */
+  display: block;
+}
+
+.advice-box:hover {
+  transform: scale(1.02);
+  box-shadow: 6px 6px 16px rgba(0, 0, 0, 0.2);
+}
