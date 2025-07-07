@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Hinga Muna: Anonymous Rant Box</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <header>
+    <div class="logo-container">
+      <img src="/WEB_DEV/RAMDAY_PINOY_PROJECT/No Folder/IMAGES/Website_Logo.png" alt="Logo" class="logo" />
+    </div>
+    <nav class="navbar">
+      <ul>
+        <li><a href="/WEB_DEV/RAMDAY_PINOY_PROJECT/No Folder/homepage.html">Home</a></li>
+        <li><a href="/WEB_DEV/RAMDAY_PINOY_PROJECT/No Folder/advicehub.html">Advice Hub</a></li>
+        <li><a href="/WEB_DEV/RAMDAY_PINOY_PROJECT/No Folder/helplines.html">Help Lines</a></li>
+        <li><a href="/WEB_DEV/RAMDAY_PINOY_PROJECT/No Folder/rantbox.html">Rant Wall</a></li>
+        <li><a href="/WEB_DEV/RAMDAY_PINOY_PROJECT/No Folder/about-us.html">About Us</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="time-management-section">
+    <div class="text-content">
+      <h1>Time Management</h1>
+      <p>
+        Discover practical advice and tools to help you manage your time more effectively.
+        From productivity tips to device features that keep you on track, learn how to make
+        the most of every minute in your workday.
+      </p>
+
+      <!-- Click Me Button -->
+      <button class="click-me-btn" id="next-tip-btn">Click Me</button>
+
+      <!-- Hidden Extra Tips Section -->
+      <div id="moreTips" style="display: none; margin-top: 20px; color: white;">
+        <ul>
+          <li>Plan your day the night before.</li>
+          <li>Work for 25 minutes, then take a short break.</li>
+          <li>Group similar tasks together.</li>
+          <li>Turn off app notifications.</li>
+          <li>Check messages at set times.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="image-grid">
+      <img src="https://summer.harvard.edu/wp-content/uploads/sites/7/2022/10/Time-management-tips.jpg" alt="Time management 1">
+      <img src="https://www.cfcs.org.uk/app/uploads/2023/12/At_work_woman_in_office-705x491.jpg" alt="Time management 2">
+      <img src="https://img.freepik.com/free-photo/man-checking-time-wrist-watch_23-2147689274.jpg" alt="Time management 3">
+    </div>
+  </main>
+
+  <!-- Reveal More Tips Script -->
+  <script defer>
+    document.addEventListener('DOMContentLoaded', () => {
+      const revealBtn = document.getElementById('next-tip-btn');
+      const moreTips = document.getElementById('moreTips');
+
+      if (revealBtn && moreTips) {
+        revealBtn.addEventListener('click', (e) => {
+          e.preventDefault();
+          moreTips.style.display = 'block';
+          revealBtn.style.display = 'none';
+        });
+      }
+    });
+  </script>
+</body>
+</html>
