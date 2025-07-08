@@ -1,5 +1,6 @@
 /* === GLOBAL VARIABLES === */
-:root {
+:root 
+{
   --yellow: #f7f7f7;
   --yellow-dark: #ffefaf;
   --bg-dark: rgba(0, 0, 0, 0.6);
@@ -7,40 +8,46 @@
   --text-dark: #000;
   --white-glass: rgba(255, 255, 255, 0.9);
 }
+
 /* === PAGE BACKGROUND & OVERLAY === */
-body::before {
+body 
+{
+  font-family: var(--font-main);
+  margin: 0;
+  animation: fadeIn 0.5s ease;
+}
+
+body::before 
+{
   content: "";
   position: fixed;
   top: 0;
   left: 0;
   height: 100%;
   width: 100%;
-  background-image: url('IMAGES/SCHOOL.webp'); /* ✅ Your image path */
+  background-image: url('IMAGES/SCHOOL.webp');
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  filter: blur(6px); /* 🔍 adjust blur intensity */
-  z-index: -2; /* Behind the dark overlay */
+  filter: blur(6px);
+  z-index: -2;
 }
-/* Keep your dark overlay above the blurred image */
-body::after {
+
+body::after 
+{
   content: "";
   position: fixed;
   top: 0;
   left: 0;
   height: 100%;
   width: 100%;
-  background-color: rgba(0, 0, 0, 0.4); /* darkens the blur for readability */
+  background-color: var(--overlay-dark);
   z-index: -1;
 }
-@media (max-width: 768px) {
-  .navbar {
-    justify-content: flex-start;
-    width: 100%;
-    margin-top: 10px;
-  }
-}
-header {
+
+/* ===HEADER=== */
+header 
+{
   display: flex;
   align-items: center;
   padding: 10px 40px;
@@ -48,24 +55,29 @@ header {
   background: rgba(255, 255, 255, 0); /* White with 80% opacity */
   backdrop-filter: blur(3px); /* optional: adds frosted glass effect */
 }
-.logo-container {
+
+.logo-container 
+{
   width: 50px;
   height: 50px;
-  margin-right: 20px;
 }
-.logo {
+
+.logo 
+{
   width: 100%;
   height: auto;
   border-radius: 50%;
 }
 /* ===NAVBAR=== */
-.navbar {
+.navbar 
+{
   flex: 1;
   display: flex;
   justify-content: center;
 }
 
-.navbar ul {
+.navbar ul 
+{
   display: flex;
   gap: 50px;
   list-style: none;
@@ -74,11 +86,13 @@ header {
   align-items: center;
 }
 
-.navbar li {
+.navbar li 
+{
   display: inline-block;
 }
 
-.navbar a {
+.navbar a 
+{
   padding: 10px 20px;
   border-radius: 25px;
   background-color: var(--yellow);
@@ -91,8 +105,145 @@ header {
   will-change: transform;
 }
 
-.navbar a:hover {
+.navbar a:hover 
+{
   background-color: var(--yellow-dark);
   transform: scale(1.12); /* bigger zoom (was 1.05) */
   box-shadow: 6px 6px 15px rgba(0, 0, 0, 0.4); /* deeper shadow */
 }
+
+
+/* === BANNER === */
+.banner 
+{
+  position: relative;
+  width: 100%;
+  height: 560px;
+  overflow: hidden;
+}
+
+.banner::after 
+{
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+.banner-img 
+{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* === SLOGAN === */
+.slogan h1 {
+  font-size: 2.5rem;
+  color: #fff;
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.6);
+  padding: 1.5rem;
+  text-align: center;
+}
+
+/* === PREVIEW SECTION === */
+.preview-wrapper {
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.preview-title {
+  font-weight: 600;
+  font-size: 28px;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+}
+
+.preview-box {
+  background-color: var(--white-glass);
+  border: 2px solid #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  padding: 30px;
+  flex-wrap: wrap;
+  max-width: 1000px;
+  margin: 0 auto;
+  backdrop-filter: blur(4px);
+  border-radius: 10px;
+}
+
+/* === THUMBNAILS === */
+.advice-thumb {
+  width: 150px;
+  height: 250px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 10px;
+  overflow: hidden;
+  border: 2px solid #000;
+  box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.15);
+  transition: transform 0.2s ease-in-out;
+  background-color: rgba(255, 255, 255, 0.9);
+}
+
+.advice-thumb a {
+  width: 100%;
+  height: 200px;
+  display: block;
+}
+
+.advice-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* instead of 'contain' */
+  padding: 0;         /* remove padding */
+  background-color: #fff;
+}
+
+.advice-thumb:hover {
+  transform: scale(1.05);
+}
+
+.aboutus-title {
+  margin-top: 5px;
+  padding: 8px 5px;
+  font-weight: bold;
+  font-size: 14px;
+  color: #000;
+  text-align: center;
+  font-family: 'Arial Black', sans-serif;
+  background-color: rgba(255, 255, 255, 0.85);
+  border-top: 1px solid #ccc;
+  width: 100%;
+}
+
+
+/* === RESPONSIVENESS === */
+@media (max-width: 768px) {
+  .navbar ul {
+    flex-direction: column;
+    gap: 20px;
+    padding-top: 20px;
+  }
+
+  .banner {
+    height: 300px;
+  }
+
+  .slogan h1 {
+    font-size: 1.6rem;
+  }
+
+  .preview-box {
+    flex-direction: column;
+    gap: 20px;
+  }
+}
+
