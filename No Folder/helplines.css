@@ -181,6 +181,7 @@ header
 /* === THUMBNAILS === */
 .advice-thumb {
   width: 150px;
+  height: 250px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -201,9 +202,9 @@ header
 .advice-thumb img {
   width: 100%;
   height: 100%;
-  object-fit: contain; /* shows full image without cropping */
-  padding: 10px;       /* gives it breathing room inside box */
-  background-color: #fff; /* prevents transparency issues */
+  object-fit: cover; /* instead of 'contain' */
+  padding: 0;         /* remove padding */
+  background-color: #fff;
 }
 
 .advice-thumb:hover {
