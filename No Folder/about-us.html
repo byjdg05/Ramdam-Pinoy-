@@ -17,18 +17,19 @@
         </div>
         <nav class="navbar">
             <ul>
-                <li><a href="homepage.html">Home</a></li>
-                <li><a href="advicehub.html">Advice Hub</a></li>
-                <li><a href="helplines.html">Help Lines</a></li>
-                <li><a href="rantbox.html">Rant Wall</a></li>
-                <li><a href="about-us.html">About Us</a></li>
+                <li><a href="homepage.html" class="nav-link">Home</a></li>
+                <li><a href="advicehub.html" class="nav-link">Advice Hub</a></li>
+                <li><a href="helplines.html" class="nav-link">Help Lines</a></li>
+                <li><a href="rantbox.html" class="nav-link">Rant Wall</a></li>
+                <li><a href="about-us.html" class="nav-link">About Us</a></li>
             </ul>
         </nav>
     </header>
 
     <!-- Banner Image -->
     <section class="banner">
-        <img src="IMAGES/peoplewalking.jpg" alt="People walking" class="banner-img">
+        <img src="https://gadgetsmagazine.com.ph/wp-content/uploads/2020/02/FEU11.png" alt="People walking"
+            class="banner-img">
     </section>
     <hr>
     <!-- Slogan -->
@@ -44,40 +45,34 @@
         <div class="preview-box">
 
             <div class="advice-thumb">
-                <a href="https://www.facebook.com/ncmhcrisishotline?mibextid=LQQJ4d" target="_blank">
-                    <img src="https://pbs.twimg.com/profile_images/1433018298308825092/_65UpEqV_400x400.jpg"
-                        alt="NCHM crisis hotline">
-                </a>
-                <p class="aboutus-title">ALBA, AERICK LEE P.</p>
+                <img src="IMAGES/alba.jpg" alt="aerick">
+                <p class="helplines-title">ALBA, AERICK LEE P.</p>
+            </div>
+            <div class="advice-thumb">
+                <img src="IMAGES/jonash.jpg" alt="jonash">
+                <p class="helplines-title">DE GUIA, JONASH AARON C.</p>
             </div>
 
             <div class="advice-thumb">
-                <a href="https://www.facebook.com/profile.php?id=100068862624004" target="_blank">
-                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSqxnJWpVoBjefGhywm-ctKGak153hNnHiZBA&s"
-                        alt="Tawag Paglaum">
-                </a>
-                <p class="aboutus">DE GUIA, JONASH AARON C.</p>
+                <img src="IMAGES/romar.jpg" alt="Romar">
+                <p class="helplines-title">LISING, ROMAR PAULO M.</p>
             </div>
-
             <div class="advice-thumb">
-                <a href="https://in-touch.org/" target="_blank">
-                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRrKzu-xJrx6LLYBKhraO5jP-SNUUbM4zQdGA&s"
-                        alt="In Touch Crisis Line">
-                </a>
-                <p class="aboutus">LISING, ROMAR PAULO M.</p>
+                <img src="IMAGES/reyes.jpg" alt="Gab">
+                <p class="helplines-title">REYES, JOHN GABRIEL B.</p>
             </div>
-
-            <div class="advice-thumb">
-                <a href="https://www.facebook.com/HopelinePH/" target="_blank">
-                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSrLSQVttX7OLoHnlBEGYcIgRsw5JgsEZE2aQ&s"
-                        alt="HOPELINE">
-                </a>
-                <p class="aboutus">REYES, JOHN GABRIEL B.</p>
-            </div>
-
         </div>
     </section>
+    <script>
+        const currentPage = window.location.pathname.split("/").pop(); // gets the file name
+        const navLinks = document.querySelectorAll(".nav-link");
 
+        navLinks.forEach(link => {
+            if (link.getAttribute("href") === currentPage) {
+                link.classList.add("active-link");
+            }
+        });
+    </script>
 </body>
 
 </html>
