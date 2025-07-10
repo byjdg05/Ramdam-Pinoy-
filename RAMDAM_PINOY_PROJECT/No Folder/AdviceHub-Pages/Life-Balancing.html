@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Hinga Muna: Anonymous Rant Box</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <header>
+    <div class="logo-container">
+      <img src="/WEB_DEV/RAMDAM_PINOY_PROJECT/No Folder/IMAGES/Website_Logo.png" alt="Logo" class="logo" />
+    </div>
+    <nav class="navbar">
+      <ul>
+        <li><a href="/WEB_DEV/RAMDAM_PINOY_PROJECT/No Folder/homepage.html" class="nav-link">Home</a></li>
+        <li><a href="/WEB_DEV/RAMDAM_PINOY_PROJECT/No Folder/advicehub.html" class="nav-link">Advice Hub</a></li>
+        <li><a href="/WEB_DEV/RAMDAM_PINOY_PROJECT/No Folder/helplines.html" class="nav-link">Help Lines</a></li>
+        <li><a href="/WEB_DEV/RAMDAM_PINOY_PROJECT/No Folder/rantbox.html" class="nav-link">Rant Wall</a></li>
+        <li><a href="/WEB_DEV/RAMDAM_PINOY_PROJECT/No Folder/about-us.html" class="nav-link">About Us</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="time-management-section">
+    <div class="text-content">
+      <h1>Life Balancing</h1>
+      <p>
+        Find practical advice on how to manage daily responsibilities while making time for yourself. 
+        From setting boundaries to creating healthy routines, explore tips that help you maintain 
+        balance between work, school, and personal life.
+      </p>
+
+      <!-- Click Me Button -->
+      <button class="click-me-btn" id="next-tip-btn">Click Me</button>
+
+      <!-- Hidden Extra Tips Section -->
+      <div id="moreTips" style="display: none; margin-top: 20px; color: white;">
+        <ul>
+          <li>Wake up at the same time every day</li>
+          <li>Limit screen time before bed to improve sleep quality.</li>
+          <li>Take short walks daily to clear your mind and reduce stress.</li>
+          <li>Say no to extra tasks when your schedule is already full.</li>
+          <li>Eat meals on time to maintain energy and focus.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="image-grid">
+      <img src="https://www.onlinewomeninpolitics.org/wp-content/uploads/2021/11/work.jpg" alt="Time management 1">
+      <img src="https://media.gettyimages.com/id/513392447/photo/teenagers-playing-tennis.jpg?s=1024x1024&w=gi&k=20&c=Y0l8Bdj64ikNkjxyw--eGndtspNuy79dCe6c27LPyxY=" alt="Time management 2">
+      <img src="https://wallpaperaccess.com/full/1431673.jpg" alt="Time management 3">
+    </div>
+  </main>
+
+  <!-- Reveal More Tips Script -->
+  <script defer>
+    document.addEventListener('DOMContentLoaded', () => {
+      const revealBtn = document.getElementById('next-tip-btn');
+      const moreTips = document.getElementById('moreTips');
+
+      if (revealBtn && moreTips) {
+        revealBtn.addEventListener('click', (e) => {
+          e.preventDefault();
+          moreTips.style.display = 'block';
+          revealBtn.style.display = 'none';
+        });
+      }
+    });
+  </script>
+  <script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const currentPath = decodeURIComponent(window.location.pathname); // handles spaces
+    const navLinks = document.querySelectorAll(".nav-link");
+
+    navLinks.forEach(link => {
+      const hrefPath = decodeURIComponent(link.getAttribute("href"));
+
+      //  Check if current URL path matches full href
+      if (currentPath === hrefPath) {
+        link.classList.add("active-link");
+      }
+    });
+  });
+</script>
+</body>
+</html>
