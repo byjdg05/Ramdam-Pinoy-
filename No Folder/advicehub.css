@@ -8,6 +8,12 @@
   --white-glass: rgba(255, 255, 255, 0.9);
 }
 /* === PAGE BACKGROUND & OVERLAY === */
+body 
+{
+  font-family: var(--font-main);
+  margin: 0;
+  animation: fadeIn 0.5s ease;
+}
 body::before {
   content: "";
   position: fixed;
@@ -51,21 +57,23 @@ header {
 .logo-container {
   width: 50px;
   height: 50px;
-  margin-right: 20px;
 }
 .logo {
   width: 100%;
   height: auto;
   border-radius: 50%;
 }
+
 /* ===NAVBAR=== */
-.navbar {
+.navbar 
+{
   flex: 1;
   display: flex;
   justify-content: center;
 }
 
-.navbar ul {
+.navbar ul 
+{
   display: flex;
   gap: 50px;
   list-style: none;
@@ -74,27 +82,46 @@ header {
   align-items: center;
 }
 
-.navbar li {
+.navbar li 
+{
   display: inline-block;
 }
 
 .navbar a {
-  padding: 10px 20px;
-  border-radius: 25px;
-  background-color: var(--yellow);
-  border: 2px solid var(--yellow);
+  padding: 8px 12px;
   color: var(--text-dark);
   font-weight: 600;
   text-decoration: none;
-  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
-  transition: transform 0.25s ease, background-color 0.25s ease, box-shadow 0.25s ease;
-  will-change: transform;
+  transition: color 0.25s ease, transform 0.25s ease;
 }
 
 .navbar a:hover {
-  background-color: var(--yellow-dark);
-  transform: scale(1.12); /* bigger zoom (was 1.05) */
-  box-shadow: 6px 6px 15px rgba(0, 0, 0, 0.4); /* deeper shadow */
+  color: var(--yellow-dark);
+  transform: scale(1.05);
+}
+
+.navbar a.active-link {
+  background-color: #fff8dc; 
+  color: #000; 
+  border-radius: 25px;
+  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
+  font-weight: 700;
+  transition: background-color 0.25s, transform 0.25s, color 0.25s;
+}
+
+.navbar a.active-link:hover {
+  background-color: #f3e8b5; 
+  color: #000; 
+  transform: scale(1.05); 
+}
+
+.active-link {
+  background-color: #fff8dc; 
+  color: #000;               
+  border-radius: 25px;
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.15);
+  font-weight: 700;
+  transform: none !important;
 }
 /*DIFF STUFF*/
 .banner {
