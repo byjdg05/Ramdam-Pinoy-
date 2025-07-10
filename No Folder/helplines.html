@@ -17,18 +17,18 @@
         </div>
         <nav class="navbar">
             <ul>
-                <li><a href="homepage.html">Home</a></li>
-                <li><a href="advicehub.html">Advice Hub</a></li>
-                <li><a href="helplines.html">Help Lines</a></li>
-                <li><a href="rantbox.html">Rant Wall</a></li>
-                <li><a href="about-us.html">About Us</a></li>
+                <li><a href="homepage.html" class="nav-link">Home</a></li>
+                <li><a href="advicehub.html" class="nav-link">Advice Hub</a></li>
+                <li><a href="helplines.html" class="nav-link">Help Lines</a></li>
+                <li><a href="rantbox.html" class="nav-link">Rant Wall</a></li>
+                <li><a href="about-us.html" class="nav-link">About Us</a></li>
             </ul>
         </nav>
     </header>
 
     <!-- Banner Image -->
     <section class="banner">
-        <img src="IMAGES/peoplewalking.jpg" alt="People walking" class="banner-img">
+        <img src="https://www.rappler.com/tachyon/2023/02/turkey-earthquake-response-team-send-off-february-7-2023-002.jpg" alt="People walking" class="banner-img">
     </section>
     <hr>
     <!-- Slogan -->
@@ -70,9 +70,9 @@
             <div class="advice-thumb">
                 <a href="https://www.facebook.com/HopelinePH/" target="_blank">
                     <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSrLSQVttX7OLoHnlBEGYcIgRsw5JgsEZE2aQ&s"
-                        alt="HOPELINE">
+                        alt="Hopeline Philippines">
                 </a>
-                <p class="helplines-title">HOPELINE</p>
+                <p class="helplines-title">Hopeline <br> Philippine</p>
             </div>
 
             <div class="advice-thumb">
@@ -80,13 +80,22 @@
                     <img src="https://www.bworldonline.com/wp-content/uploads/2021/04/bantaybata163-256x300.jpeg"
                         alt="Bantay Bata 163">
                 </a>
-                <p class="helplines-title">Bantay Bata Help Line 163</p>
+                <p class="helplines-title">Bantay Bata <br> 163</p>
             </div>
 
         </div>
     </section>
 
+<script>
+  const currentPage = window.location.pathname.split("/").pop(); // gets the file name
+  const navLinks = document.querySelectorAll(".nav-link");
 
+  navLinks.forEach(link => {
+    if (link.getAttribute("href") === currentPage) {
+      link.classList.add("active-link");
+    }
+  });
+</script>
 </body>
 
 </html>
