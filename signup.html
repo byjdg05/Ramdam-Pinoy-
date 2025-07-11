@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Signup - Working Students</title>
+    <link rel="stylesheet" href="signup.css" />
+</head>
+
+<body>
+    <!-- VIDEO BACKGROUND -->
+    <video autoplay muted loop playsinline class="background-video">
+        <source src="/WEB_DEV/RAMDAM_PINOY_PROJECT/No Folder/IMAGES/loginbg.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+    </video>
+    <div class="center-wrapper">
+        <div class="login-container">
+            <img src="IMAGES/Website_Logo.png" alt="Logo" class="logo" />
+            <h2>Create an Account</h2>
+
+            <form onsubmit="handleSignup(event)">
+                <input type="text" placeholder="Username" required />
+                <input type="password" placeholder="Password" required />
+                <input type="email" placeholder="Email" required />
+
+                <button type="submit">CREATE ACCOUNT</button>
+
+                <!-- Sign In button (secondary action) -->
+                <a href="login.html" class="signin-btn">Return to Login Page</a>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        function handleSignup(event) {
+            event.preventDefault(); // prevent form submission
+            alert("Account Created! Please go back to the Login Page.");
+        }
+    </script>
+
+</body>
+
+</html>

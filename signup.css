@@ -1,0 +1,122 @@
+/* Reset and page layout */
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: Arial, sans-serif;
+  background-size: cover;
+}
+
+/* Wrapper around the button only */
+.button-wrapper {
+  background-color: rgba(203, 18, 18, 0.2); /* Slight background */
+  padding: 5px;
+  border-radius: 8px;
+  transition: background-color 0.3s ease;
+  margin-top: 10px;
+}
+
+/* Hover effect on the button box only */
+.button-wrapper:hover {
+  background-color: rgba(255, 255, 255, 0.4); /* Brighter on hover */
+}
+
+/* Centering the content */
+.center-wrapper {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Transparent/glassmorphism container */
+.login-container {
+  background-color: rgba(255, 255, 255, 0.2); /* Semi-transparent */
+  backdrop-filter: blur(50px); /* Glass blur effect */
+  -webkit-backdrop-filter: blur(50px);
+  padding: 30px 25px;
+  border-radius: 12px;
+  width: 320px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  transition: background-color 0.3s ease;
+}
+
+/* Logo */
+.logo {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  margin-bottom: 10px;
+}
+
+/* Headline */
+h2 {
+  font-size: 18px;
+  margin-bottom: 20px;
+  color: #fff;
+}
+
+/* Form layout */
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Input fields */
+input[type="text"],
+input[type="password"],
+input[type="email"] {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: none;
+  border-radius: 6px;
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+/* Submit button */
+button[type="submit"] {
+  width: 100%;
+  padding: 10px;
+  background-color: #a5a5a5;
+  border: none;
+  font-weight: bold;
+  color: #000;
+  cursor: pointer;
+  border-radius: 6px;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+button[type="submit"]:hover {
+  background-color: #f5cf39;
+  transform: scale(1.03);
+}
+/* VIDEO BACKGROUND */
+.background-video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  min-width: 100%;
+  min-height: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+/* Sign In link styled as button */
+.signin-btn {
+  display: inline-block;
+  margin-top: 15px;
+  font-size: 13px;
+  color: #fff;
+  text-decoration: none;
+  background-color: transparent;
+  padding: 8px 0;
+  transition: color 0.2s ease, text-decoration 0.2s ease;
+}
+
+.signin-btn:hover {
+  color: #f5cf39;
+  text-decoration: underline;
+}

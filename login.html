@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login - Working Students</title>
+    <link rel="stylesheet" href="login.css" />
+</head>
+
+<body>
+    <!-- VIDEO BACKGROUND -->
+    <video autoplay muted loop playsinline class="background-video">
+        <source src="/WEB_DEV/RAMDAM_PINOY_PROJECT/No Folder/IMAGES/loginbg.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+    </video>
+    <div class="center-wrapper">
+        <div class="login-container">
+            <img src="IMAGES/Website_Logo.png" alt="Logo" class="logo" />
+            <h2>A Safe Space for Working Students</h2>
+
+            <form class="login-form">
+                <input type="text" placeholder="Username" required />
+                <input type="password" placeholder="Password" required />
+
+                <div class="options">
+                    <label><input type="checkbox" /> Remember For 30 days</label>
+                    <a href="#">Forgot Password?</a>
+                </div>
+
+                <p class="signup">Don’t have an account? <a href="signup.html">Signup</a></p>
+                <button type="submit" class="login-btn">LOGIN</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const form = document.querySelector(".login-form");
+
+            form.addEventListener("submit", function (e) {
+                const username = form.querySelector('input[type="text"]').value.trim();
+                const password = form.querySelector('input[type="password"]').value.trim();
+
+                if (username === "" || password === "") {
+                    e.preventDefault(); // Stop submission
+                    alert("Please enter both username and password.");
+                } else {
+                    // Redirect manually (fake login success)
+                    e.preventDefault(); // prevent form reload
+                    window.location.href = "/WEB_DEV/RAMDAM_PINOY_PROJECT/No Folder/homepage.html";
+                }
+            });
+        });
+    </script>
+
+</body>
+
+</html>

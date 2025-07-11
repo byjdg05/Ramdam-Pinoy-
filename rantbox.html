@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hinga Muna: Anonymous Rant Box</title>
+  <link rel="stylesheet" href="rantbox.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+  <header>
+    <div class="logo-container">
+      <img src="IMAGES/Website_Logo.png" alt="Logo" class="logo" />
+    </div>
+    <nav class="navbar">
+      <ul>
+        <li><a href="homepage.html" class="nav-link">Home</a></li>
+        <li><a href="advicehub.html" class="nav-link">Advice Hub</a></li>
+        <li><a href="helplines.html" class="nav-link">Help Lines</a></li>
+        <li><a href="rantbox.html" class="nav-link">Rant Wall</a></li>
+        <li><a href="about-us.html" class="nav-link">About Us</a></li>
+
+      </ul>
+    </nav>
+  </header>
+
+  <section class="title-section" id="home">
+    <h1><i>Hinga Muna: Anonymous Rant Box</i></h1>
+    <p>This is a safe space. Rants are anonymous.<br /><strong>Be respectful.</strong></p>
+  </section>
+
+  <main class="container" id="rantWall">
+
+    <aside class="sidebar">
+      <div class="rant-box">
+        <h3>Recent Rants</h3>
+        <div class="rant-card">
+          <span class="rant-name">Jonash De Guia</span><br>
+          <span class="rant-text">Balancing work and school is draining. I'm always tired, always behind, and barely
+            holding it together.</span>
+        </div>
+        <button class="load-btn" onclick="showAlert()">Load More</button>
+      </div>
+
+      <div class="rant-box">
+        <h3>Recent Rants</h3>
+        <div class="rant-card">
+          <span class="rant-name">John Reyes</span><br>
+          <span class="rant-text">People say, "Just manage your time better," as if I haven’t tried.</span>
+        </div>
+        <button class="load-btn" onclick="showAlert()">Load More</button>
+      </div>
+
+      <div class="rant-box">
+        <h3>Recent Rants</h3>
+        <div class="rant-card">
+          <span class="rant-name">Aerick Alba</span><br>
+          <span class="rant-text">Juggling shifts and deadlines is slowly breaking me.</span>
+        </div>
+        <button class="load-btn" onclick="showAlert()">Load More</button>
+      </div>
+    </aside>
+
+    <section class="rant-input">
+      <div class="rant-form">
+        <h2>Share Your Thoughts</h2>
+        <form id="rantForm">
+          <label for="name">Name (optional):</label>
+          <input type="text" id="name" name="name" placeholder="Your name...">
+
+          <label for="date">Date:</label>
+          <input type="date" id="date" name="date" required>
+
+          <label for="rant">Rant:</label>
+          <textarea id="rant" name="rant" placeholder="What's on your mind?" required></textarea>
+
+          <button type="submit" class="submit-btn">Submit</button>
+        </form>
+      </div>
+    </section>
+
+  </main>
+
+  <section id="adviceHub" style="display:none;"></section>
+  <section id="helpLines" style="display:none;"></section>
+  <section id="aboutUs" style="display:none;"></section>
+
+  <script>
+    function showAlert() {
+      alert("Admins are reviewing new rants, please wait.");
+    }
+  </script>
+
+  <script src="rantbox.js" defer></script>
+
+  <script>
+    const currentPage = window.location.pathname.split("/").pop(); // gets the file name
+    const navLinks = document.querySelectorAll(".nav-link");
+
+    navLinks.forEach(link => {
+      if (link.getAttribute("href") === currentPage) {
+        link.classList.add("active-link");
+      }
+    });
+  </script>
+  <footer class="footer">
+    <div class="footer-container">
+      <h3>Ramdam Pinoy</h3>
+      <p>Est. 2025 — A Safe Space for Working Students</p>
+      <p>&copy; all rights reserved.</p>
+    </div>
+  </footer>
+</body>
+
+</html>

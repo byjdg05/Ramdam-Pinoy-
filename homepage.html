@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ramdam Pinoy | Homepage</title>
+  <link rel="stylesheet" href="homepage.css">
+  <link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap" rel="stylesheet">
+</head>
+<!--Eto yung header navbar-->
+
+<body>
+  <header>
+    <div class="logo-container">
+      <img src="IMAGES/Website_Logo.png" alt="Logo" class="logo" />
+    </div>
+    <nav class="navbar">
+      <ul>
+        <li><a href="homepage.html" class="nav-link">Home</a></li>
+        <li><a href="advicehub.html" class="nav-link">Advice Hub</a></li>
+        <li><a href="helplines.html" class="nav-link">Help Lines</a></li>
+        <li><a href="rantbox.html" class="nav-link">Rant Wall</a></li>
+        <li><a href="about-us.html" class="nav-link">About Us</a></li>
+      </ul>
+      <a href="login.html" class="sign-out-btn">Sign Out</a>
+    </nav>
+  </header>
+
+  <!-- Banner Image -->
+  <section class="banner">
+    <img src="IMAGES/peoplewalking.jpg" alt="People walking" class="banner-img">
+  </section>
+  <hr>
+  <!-- Slogan -->
+  <section class="slogan">
+    <h1>
+      <center>A HEALTHY MIND BUILDS A STRONGER LIFE</center>
+    </h1>
+  </section>
+  <hr>
+  <!-- Cards -->
+  <section class="preview-wrapper">
+    <div class="preview-box">
+      <a href="AdviceHub-Pages/Life-Balancing.html" class="advice-thumb">
+        <img src="IMAGES/Sub Pages (ADVICES)/Life Balancing/work life balancing.jpg" alt="Advice 1">
+      </a>
+      <a href="AdviceHub-Pages/School.html" class="advice-thumb">
+        <img src="IMAGES/Sub Pages (ADVICES)/School/school.jpg" alt="Advice 2">
+      </a>
+      <a href="AdviceHub-Pages/Time-Management.html" class="advice-thumb">
+        <img src="IMAGES/Sub Pages (ADVICES)/Time Management/time management.jpg" alt="Advice 3">
+      </a>
+      <a href="AdviceHub-Pages/Work.html" class="advice-thumb">
+        <img src="IMAGES/Sub Pages (ADVICES)/Work/work.jpeg" alt="Advice 4">
+      </a>
+      <a href="advicehub.html" class="view-btn">View All<br>Advices</a>
+    </div>
+  </section>
+
+  <script>
+    const currentPage = window.location.pathname.split("/").pop(); // gets the file name
+    const navLinks = document.querySelectorAll(".nav-link");
+
+    navLinks.forEach(link => {
+      if (link.getAttribute("href") === currentPage) {
+        link.classList.add("active-link");
+      }
+    });
+  </script>
+
+  <footer class="footer">
+    <div class="footer-container">
+      <h3>Ramdam Pinoy</h3>
+      <p>Est. 2025 — A Safe Space for Working Students</p>
+      <p>&copy; all rights reserved.</p>
+    </div>
+  </footer>
+</body>
+
+</html>
